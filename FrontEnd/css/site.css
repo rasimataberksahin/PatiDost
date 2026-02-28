@@ -1,0 +1,321 @@
+﻿/* ===== GLOBAL ===== */
+body {   
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #111827 35%,
+        #1e1b4b 65%,
+        #312e81 100%
+    );
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+background: rgba(15, 18, 36, 0.75) !important;
+backdrop-filter: blur(12px);
+border-bottom: none;
+margin-bottom: 0 !important;
+}
+
+
+.navbar-brand,
+.nav-link {
+color: #e5e7eb !important;
+font-weight: 600;
+}
+
+.nav-link:hover {
+color: #a5b4fc !important;
+}
+
+
+/* ===== PAGE TITLE ===== */
+.page-header {
+margin-bottom: 32px;
+}
+
+.page-header h1 {
+font-weight: 700;
+font-size: 1.8rem;
+}
+
+.page-header p {
+color: #6b7280;
+margin-top: 6px;
+}
+
+
+/* ===== CARD ===== */
+.card {
+    border-radius: 18px;
+    background: rgba(17, 24, 39, 0.85); /* koyu lacivert */
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    color: #e5e7eb;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ===== TABLE ===== */
+.table {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .navbar-nav {
+        margin-top: 12px;
+    }
+}
+/* ===== MOBILE NAVBAR TOGGLER ===== */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* HERO BAŞLIK*/
+.hero {
+    text-align: center;
+    margin: 80px 0 90px;
+    margin-top: 70px !important;
+    margin-bottom: 60px !important
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #7dd3fc, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #b6bdd6;
+    margin-top: 18px;
+}
+
+/*hero--page*/
+.hero--page {
+    padding-top: 6px; /* 🔥 BURASI */
+    padding-bottom: 16px;
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+}
+
+.hero--page .page-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 0 !important;
+}
+
+.hero--page p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 6px; /* çok az boşluk */
+    margin-bottom: 0;
+}
+
+
+/* ===============================
+GLOBAL INPUT & SELECT STYLING
+=============================== */
+
+.form-control,
+.form-select {
+background: rgba(255, 255, 255, 0.06);
+border: 1px solid rgba(255, 255, 255, 0.12);
+color: #f9fafb;
+border-radius: 12px;
+}
+
+/* Placeholder rengi */
+.form-control::placeholder {
+color: #9ca3af;
+}
+
+/* Focus durumu */
+.form-control:focus,
+.form-select:focus {
+background: rgba(255, 255, 255, 0.08);
+border-color: #818cf8;
+box-shadow: none;
+color: #ffffff;
+}
+
+/* SELECT KAPALI HAL */
+select.form-select {
+background-color: #1e293b;
+color: #e5e7eb;
+}
+
+/* DROPDOWN İÇİNDEKİ OPTION'LAR */
+select.form-select option {
+background-color: #1e293b;
+color: #e5e7eb; /*  ASIL OLAY BU */
+}
+
+/* HOVER OLMAYAN HALDE DE OKUNUR OLSUN */
+select.form-select option:not(:checked) {
+    background-color: #1e293b;
+    color: #e5e7eb;
+}
+
+
+
+
+/* ===== ADMIN TABLE (FINAL) ===== */
+
+.custom-table {
+background: #f3f4f6;
+border-radius: 14px;
+overflow: hidden;
+margin-bottom: 0 !important;
+}
+
+/* HEADER */
+.custom-table thead {
+background: #111827;
+}
+
+.custom-table thead th {
+    color: #f9fafb !important;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    border: none;
+}
+
+/* BODY */
+.custom-table tbody td {
+color: #111827;
+vertical-align: middle;
+}
+
+/* ZEBRA */
+.custom-table tbody tr:nth-child(even) {
+background-color: #e5e7eb;
+}
+
+/* HOVER */
+.custom-table tbody tr:hover {
+background-color: #dbeafe;
+}
+
+
+/* ===== FORCE TABLE HEADER DARK ===== */
+.custom-table > thead {
+background-color: #0f172a !important;
+}
+
+.custom-table > thead > tr > th {
+    background-color: #0f172a !important;
+    color: #f9fafb !important;
+    border-bottom: none !important;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* BODY */
+.custom-table > tbody > tr > td {
+background-color: #ffffff !important;
+color: #111827 !important;
+}
+
+/* ZEBRA */
+.custom-table > tbody > tr:nth-child(even) > td {
+background-color: #f3f4f6 !important;
+}
+
+/* HOVER */
+.custom-table > tbody > tr:hover > td {
+background-color: #e0e7ff !important;
+}
+
+
+
+/* ===== TABLE SEARCH ===== */
+.table-search {
+max-width: 260px;
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.15);
+color: #f9fafb;
+}
+
+.table-search::placeholder {
+color: #9ca3af;
+}
+
+
+
+
+/* ===== TABLE SCROLL ===== */
+.table-wrapper {
+max-height: 260px;
+overflow-y: auto;
+border-radius: 16px;
+}
+
+/* SCROLLBAR (Chrome / Edge) */
+.table-wrapper::-webkit-scrollbar {
+width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+background: rgba(255,255,255,0.05);
+border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+background: rgba(99,102,241,0.6);
+border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(99,102,241,0.9);
+}
+
+
+
+/* ===== NAVBAR ACTIVE LINK ===== */
+.nav-link.active {
+    color: #a5b4fc !important; /* neon-indigo */
+    font-weight: 700;
+    position: relative;
+}
+
+/* Alt çizgi efekti (çok şık) */
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #7dd3fc, #c084fc);
+    border-radius: 2px;
+}

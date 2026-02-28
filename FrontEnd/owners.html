@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>PatiDost | Sahipler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ortak CSS -->
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (INDEX İLE AYNI) -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🐾 PatiDost</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">🏠 Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="owners.html">Sahipler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="animals.html">Hayvanlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="veterinarians.html">Veterinerler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="appointments.html">Randevular</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- SAYFA BAŞLIĞI (INDEX DÜZENİYLE UYUMLU) -->
+        <div class="hero hero--page text-center">
+            <h1 class="page-title">Sahipler</h1>
+            <p>Sahipleri Düzenleyin...</p>
+        </div>
+
+
+
+        <!-- FORM -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="mb-3">Yeni Sahip Ekle</h5>
+
+                <div class="row g-2">
+                    <div class="col-md-4">
+                        <input id="fullName" class="form-control" placeholder="Ad Soyad">
+                    </div>
+                    <div class="col-md-4">
+                        <input id="phone" class="form-control" placeholder="Telefon">
+                    </div>
+                    <div class="col-md-4">
+                        <input id="email" class="form-control" placeholder="E-posta">
+                    </div>
+
+                    <div class="col-md-3 mt-3">
+                        <button onclick="addOwner()" class="btn btn-success w-100">
+                            Sahip Ekle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--arama çubuğu-->
+        <div class="table-toolbar mb-2">
+            <input type="text"
+                   id="tableSearch"
+                   class="form-control table-search"
+                   placeholder="Listede ara..."
+                   onkeyup="filterTable()" />
+        </div>
+        <!-- TABLE -->
+        <div class="table-wrapper">
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>Telefon</th>
+                        <th>E-posta</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody id="ownerTable">
+                    <!-- JS dolduruyor -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- UPDATE OWNER MODAL -->
+    <div class="modal fade" id="editOwnerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sahip Güncelle</h5>
+                    <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" id="editOwnerId">
+
+                    <div class="mb-2">
+                        <input id="editFullName" class="form-control" placeholder="Ad Soyad">
+                    </div>
+
+                    <div class="mb-2">
+                        <input id="editPhone" class="form-control" placeholder="Telefon">
+                    </div>
+
+                    <div class="mb-2">
+                        <input id="editEmail" class="form-control" placeholder="E-posta">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button class="btn btn-warning" onclick="updateOwner()">Güncelle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DELETE CONFIRM MODAL -->
+    <div class="modal fade" id="deleteOwnerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">Silme Onayı</h5>
+                    <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    Bu sahibi silmek istediğine emin misin?
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                    <button class="btn btn-danger" onclick="confirmDeleteOwner()">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/owners.js"></script>
+
+</body>
+</html>
